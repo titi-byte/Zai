@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lluvia de Girasoles 🌻</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <!-- Fondo animado de lluvia -->
+  <div class="lluvia" id="lluvia"></div>
+
+  <div class="contenedor">
+    <!-- Girasol centrado -->
+    <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- Tallo -->
+      <rect x="96" y="120" width="8" height="150" fill="#6ca12b" />
+
+      <!-- Hojas -->
+      <path d="M0,-40 C12,-30 12,-10 0,0 C-12,-10 -12,-30 0,-40 Z"
+            fill="#6ca12b"
+            stroke="#5c9025"
+            stroke-width="1.5"
+            transform="translate(100,240) rotate(-40)" />
+
+      <path d="M0,-40 C12,-30 12,-10 0,0 C-12,-10 -12,-30 0,-40 Z"
+            fill="#6ca12b"
+            stroke="#5c9025"
+            stroke-width="1.5"
+            transform="translate(100,240) rotate(40)" />
+
+      <!-- Pétalos -->
+      <g transform="translate(100,100)">
+        <g id="petalo">
+          <path d="M0,-70 C15,-60 15,-20 0,-10 C-15,-20 -15,-60 0,-70 Z"
+                fill="#f7c52b" stroke="#e5b025" stroke-width="2"/>
+        </g>
+
+        <!-- 20 pétalos -->
+        <use href="#petalo" transform="rotate(0)" />
+        <use href="#petalo" transform="rotate(18)" />
+        <use href="#petalo" transform="rotate(36)" />
+        <use href="#petalo" transform="rotate(54)" />
+        <use href="#petalo" transform="rotate(72)" />
+        <use href="#petalo" transform="rotate(90)" />
+        <use href="#petalo" transform="rotate(108)" />
+        <use href="#petalo" transform="rotate(126)" />
+        <use href="#petalo" transform="rotate(144)" />
+        <use href="#petalo" transform="rotate(162)" />
+        <use href="#petalo" transform="rotate(180)" />
+        <use href="#petalo" transform="rotate(198)" />
+        <use href="#petalo" transform="rotate(216)" />
+        <use href="#petalo" transform="rotate(234)" />
+        <use href="#petalo" transform="rotate(252)" />
+        <use href="#petalo" transform="rotate(270)" />
+        <use href="#petalo" transform="rotate(288)" />
+        <use href="#petalo" transform="rotate(306)" />
+        <use href="#petalo" transform="rotate(324)" />
+        <use href="#petalo" transform="rotate(342)" />
+      </g>
+
+      <!-- Centro del girasol -->
+      <circle cx="100" cy="100" r="30" fill="#6b4226" />
+      <circle cx="100" cy="100" r="20" fill="#4b2b18" />
+    </svg>
+
+    <!-- Mensaje final -->
+    <p class="mensaje">💛 Espero que te gusten estos Girasoles 🌻</p>
+  </div>
+
+  <!-- Script para generar la lluvia de emojis -->
+  <script>
+    const lluvia = document.getElementById("lluvia");
+
+    for (let i = 0; i < 25; i++) {
+      const flor = document.createElement("div");
+      flor.classList.add("flor");
+      flor.textContent = "🌻";
+      flor.style.left = Math.random() * 100 + "vw";
+      flor.style.animationDuration = 3 + Math.random() * 3 + "s";
+      flor.style.fontSize = 20 + Math.random() * 25 + "px";
+      flor.style.animationDelay = Math.random() * 5 + "s";
+      lluvia.appendChild(flor);
+    }
+  </script>
+</body>
+</html>

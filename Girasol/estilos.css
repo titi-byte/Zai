@@ -1,0 +1,79 @@
+/* Fondo moderno y centrado */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(180deg, #d4f1ff 0%, #fef3c7 100%);
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Contenedor principal */
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* SVG del girasol */
+svg {
+  width: 220px;
+  height: 320px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Texto con animación suave */
+.mensaje {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  color: #4b2b18;
+  font-weight: 600;
+  text-align: center;
+  animation: aparecer 2.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes aparecer {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fondo con lluvia */
+.lluvia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Cada girasol 🌻 */
+.flor {
+  position: absolute;
+  top: -50px;
+  animation: caer linear infinite;
+  opacity: 0.9;
+}
+
+/* Animación de caída */
+@keyframes caer {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
